@@ -1,14 +1,17 @@
 const {Builder, By, Key, until} = require('selenium-webdriver');
 
-const webdriver = require('selenium-webdriver');
-const chrome = require('selenium-webdriver/chrome');
-const firefox = require('selenium-webdriver/firefox');
 
-let driver = new webdriver.Builder()
-.forBrowser('chrome')
-.setChromeOptions()
-//.setFirefoxOptions(/* ... */)
-.build();
+
+/*important support macOS*/
+const webdriver = require('selenium-webdriver');
+//const chrome = require('selenium-webdriver/chrome');
+//const firefox = require('selenium-webdriver/firefox');
+let driver = new webdriver.Builder().forBrowser('chrome').setChromeOptions().build();
+
+/*important support win32*/
+/*const selenium = require('selenium-webdriver');
+require('chromedriver');
+const driver = new selenium.Builder().forBrowser("chrome").build();*/
 
 let timeout = async(time=1)=>{
 	return new Promise((resolve, reject)=>{
